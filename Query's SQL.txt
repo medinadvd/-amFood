@@ -1,0 +1,21 @@
+-- Creacion de usuario
+insert into user values ('correo','nombre',sha2('contraseña'));
+
+-- Inicio sesion usuario
+select * from user where 'correo' = correo and 'contraseña' = contraseña;
+
+-- Mostrar el nombre del usuario en la pagina web
+select nombre from user where 'correo' = correo and 'contraseña' = contraseña;
+
+-- Mostrar el Restaurante aleatorio
+select TierRestaurante, Nombre, Localizacion, Categoria, Puntuacion from restaurante;
+
+-- Perfil de usuario sin el Favorito (Para mostrar el historial)
+select u.nombre, u.correo, u.contraseña, u.vegetariano, u.vegano, u.halal, u.gluten_free, h.idrestaurante
+from user u, historial h
+where u.correo = h.correo;
+
+-- Perfil usuario para mostrar los favoritos 
+select h.favoritos
+from user u, historial h
+where u.correo = h.correo;
