@@ -1,17 +1,16 @@
 
-
-
 CREATE TABLE `restaurante` (
   `idrestaurante` INT NOT NULL AUTO_INCREMENT,
   `TierRestaurante` INT NULL,
   `Nombre` VARCHAR(100) NULL,
   `Localizacion` VARCHAR(200) NULL,
-  `Categoria` VARCHAR(45) NULL,
+  `Tipo_comida` VARCHAR(45) NULL,
   `Puntuacion` INT NULL,
+  `Telefono` int null,
   PRIMARY KEY (`idrestaurante`));
 
 
-CREATE TABLE `Preferencias` (
+CREATE TABLE `preferencias_restaurante` (
   `idrestaurante` INT NOT NULL,
   `vegetariano` TINYINT NULL,
   `vegano` TINYINT NULL,
@@ -26,10 +25,6 @@ CREATE TABLE `user` (
   `correo` VARCHAR(100) NOT NULL,
   `nombre` VARCHAR(45) NULL,
   `contraseña` VARCHAR(50) NULL,
-  `vegetariano` TINYINT NULL,
-  `vegano` TINYINT NULL,
-  `halal` TINYINT NULL,
-  `gluten_free` TINYINT NULL,
   PRIMARY KEY (`correo`));
 
 
@@ -42,6 +37,16 @@ CREATE TABLE `historial` (
     REFERENCES `restaurante` (`idrestaurante`),
     FOREIGN KEY (`correo`)
     REFERENCES `user` (`correo`));
+
+create table `preferencias_user`(
+  `correo` VARCHAR(100) NOT NULL,
+  `vegetariano` TINYINT NULL,
+  `vegano` TINYINT NULL,
+  `halal` TINYINT NULL,
+  `gluten_free` TINYINT NULL,
+  FOREIGN KEY (`correo`)
+  REFERENCES `user` (`correo`));
+
 
 
 
