@@ -1,4 +1,3 @@
-
 CREATE TABLE `restaurante` (
   `idrestaurante` INT NOT NULL AUTO_INCREMENT,
   `TierRestaurante` INT NULL,
@@ -25,13 +24,16 @@ CREATE TABLE `user` (
   `correo` VARCHAR(100) NOT NULL,
   `nombre` VARCHAR(45) NULL,
   `contraseña` VARCHAR(50) NULL,
-  PRIMARY KEY (`correo`));
+  `idrestaurante` int,
+  PRIMARY KEY (`correo`),
+    FOREIGN KEY (`idrestaurante`)
+    REFERENCES `restaurante` (`idrestaurante`));
 
 
 CREATE TABLE `historial` (
-  `idrestaurante` INT NOT NULL,
   `correo` VARCHAR(100) NULL,
-  `favoritos` TINYINT NULL,
+  `idrestaurante` INT NOT NULL,
+  `favorito` TINYINT NULL,
 
     FOREIGN KEY (`idrestaurante`)
     REFERENCES `restaurante` (`idrestaurante`),
