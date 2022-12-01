@@ -8,7 +8,11 @@ select * from user where 'correo' = correo and 'contraseña' = contraseña;
 select nombre from user where 'correo' = correo and 'contraseña' = contraseña;
 
 -- Mostrar el Restaurante aleatorio
-select TierRestaurante, Nombre, Localizacion, Categoria, Puntuacion from restaurante;
+
+select r.TierRestaurante, r.Nombre, r.Localizacion, r.Tipo_comida, r.Puntuacion, r.Telefono
+from restaurante r, preferencias_restaurante pr, preferencias_user pu
+where pu.vegetariano = pr.vegetariano and pu.vegano = pr.vegano and pu.halal = pr.halal and pu.gluten_free = pr.gluten_free;
+
 
 -- Perfil de usuario sin el Favorito (Para mostrar el historial)
 select u.nombre, u.correo, u.contraseña, u.vegetariano, u.vegano, u.halal, u.gluten_free, h.idrestaurante
@@ -19,3 +23,4 @@ where u.correo = h.correo;
 select h.favoritos
 from user u, historial h
 where u.correo = h.correo;
+
