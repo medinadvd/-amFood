@@ -1,8 +1,15 @@
+
 -- Creacion de usuario
 insert into user values ('correo','nombre',sha2('contraseña'));
 
 -- Inicio sesion usuario
 select * from user where 'correo' = correo and 'contraseña' = contraseña;
+
+-- Update datos usuario
+update preferencias_user
+set vegetariano = 'vegetariano', vegano = 'vegano', halal = 'halal', gluten_free = 'gluten_free'
+where correo = 'getcorreo';
+
 
 -- Mostrar el nombre del usuario en la pagina web
 select nombre from user where 'correo' = correo and 'contraseña' = contraseña;
@@ -23,4 +30,3 @@ where u.correo = h.correo;
 select h.favoritos
 from user u, historial h
 where u.correo = h.correo;
-
