@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <script src="Javascript.js"></script>
+    <form action="" method="post">
+        <fieldset>
+            <legend>Iniciar sesion</legend>
+            <input type="email" id="correo" name="correo" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+{10,35}"  maxlength="35"  placeholder="Correo electronico"/>
+            <p>
+            <input type="password" id="contraseña" name="contraseña" required pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,50}$/" minlength="8" maxlength="50" placeholder="Controaseña"/>
+            <p>
+            <a href="registrarse.html">Registrarse</a> <input type="submit" value="Iniciar sesion">
+        </fieldset>
+
+    </form>
+
+    <!-- .directive('isEmail', ['$compile', '$q', 't', function($compile, $q, t) {
+    var EMAIL_PATTERN = '^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$';
+    var EMAIL_REGEXP = new RegExp(EMAIL_PATTERN, 'i');
+    return {
+        require: 'ngModel',
+        link: function(scope, elem, attrs, ngModel){
+            function validate(value) {
+                var valid = angular.isUndefined(value)
+                    || value.length === 0
+                    || EMAIL_REGEXP.test(value);
+                ngModel.$setValidity('email', valid);
+                return valid ? value : undefined;
+            }
+            ngModel.$formatters.unshift(validate);
+            ngModel.$parsers.unshift(validate);
+            elem.attr('pattern', EMAIL_PATTERN);
+            elem.attr('title', 'Invalid email address');
+        }
+    };
+}])
+
+<input type="text" is-email />
+
+
+-->
+</body>
+</html>
