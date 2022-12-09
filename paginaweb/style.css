@@ -1,0 +1,26 @@
+.rectangle1
+{
+    
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color:rgba(199, 76, 74, 0.800000011920929);
+    width: 366px;
+    height: 78px;
+    border-radius:10px 10px 0px 0px;
+}
+
+
+	
+	
+.rectangleForm
+{
+    
+    text-align: center;
+    margin: auto;
+    background-color:#ffd8d8;
+    width: 366px;
+    height: 306px;
+    border-radius:0px 0px 10px 10px;
+    border:0px solid #000000;
+}

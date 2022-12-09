@@ -1,51 +1,89 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style_Log_in.css">
+  <title>Login & SignUp Form </title>
 </head>
+
 <body>
+   
+  <div class="wrapper">
+
+    
+    <div class="title-text">    
+        <div class="title-login">Log In</div>
+    </div>
+
+    <!-- Start Form Container -->
  
-    <script src="Javascript.js"></script>
-    <form action="" method="post">
-        <fieldset>
-            <legend>Iniciar sesion</legend>
-            <input type="email" id="correo" name="correo" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+{10,35}"  maxlength="35"  placeholder="Correo electronico"/>
-            <p>
-            <input type="password" id="contraseña" name="contraseña" required pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,50}$/" minlength="8" maxlength="50" placeholder="Contraseña"/>
-            <p>
-            <a href="registrarse.html">Registrarse</a> <input type="submit" value="Iniciar sesion">
-        </fieldset>
 
-    </form>
+      <div class="form-inner">
+        
+        <!-- Start Login Form -->
+        <form action="#" class="login">
+          <div class="field">
+            <input type="email" id="correo" name="correo" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+{10,35}"  maxlength="35"  placeholder="Email"/>
+          </div>
+          <div class="field">
+            <input type="password" id="contraseña" name="contraseña" required pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,50}$/" minlength="8" maxlength="50" placeholder="Password"/>
+          </div>        
+          <div class="field">
+            <input type="submit" value="Login">
+          </div>
+          <div class="signup-link">
+            Not a member yet? <a href="registrarse.html">Signup now</a>
+          </div>
+        </form>
 
-    <!-- .directive('isEmail', ['$compile', '$q', 't', function($compile, $q, t) {
-    var EMAIL_PATTERN = '^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$';
-    var EMAIL_REGEXP = new RegExp(EMAIL_PATTERN, 'i');
-    return {
-        require: 'ngModel',
-        link: function(scope, elem, attrs, ngModel){
-            function validate(value) {
-                var valid = angular.isUndefined(value)
-                    || value.length === 0
-                    || EMAIL_REGEXP.test(value);
-                ngModel.$setValidity('email', valid);
-                return valid ? value : undefined;
-            }
-            ngModel.$formatters.unshift(validate);
-            ngModel.$parsers.unshift(validate);
-            elem.attr('pattern', EMAIL_PATTERN);
-            elem.attr('title', 'Invalid email address');
-        }
-    };
-}])
-
-<input type="text" is-email />
-
-
--->
+        
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
+<!-- Start Signup Form 
+        <form action="#" class="signup">
+          <div class="field">
+
+            <input type="text" placeholder="First Name" required>
+
+          </div>
+          <div class="field">
+
+            <input type="text" placeholder="Last Name" required>
+
+          </div>
+          <div class="field">
+
+            <input type="text" placeholder="Username" required>
+
+          </div>
+          <div class="field">
+            <input type="text" placeholder="Email Address" required>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="Password" required>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="Confirm password" required>
+          </div>
+          <div class="field">
+
+            <input type="text" placeholder="Coupon code" required>
+
+          </div>
+          <div class="field">
+
+            <input type="text" placeholder="Refferal ID" required>
+
+          </div>
+
+          <div class="field">
+            <input type="submit" value="Signup">
+          </div>
+
+        </form>-->
