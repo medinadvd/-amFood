@@ -1,72 +1,48 @@
 package Model;
 
-import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Table(name = "restaurante")
+@ToString
+@EqualsAndHashCode
+@AllArgsConstructor
+@Getter
+@Setter
 public class Restaurant {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idrestaurante")
 	private int id_Restaurant;
-	private Preference pref;
+
+	@Column(name = "tierRestaurante")
 	private int tier;
-	private String type;
+
+	@Column(name = "Nombre")
 	private String name;
+
+	@Column(name = "Localizacion")
 	private String gps;
+
+	@Column(name = "Tipo_comida")
+	private String type;
+
+	@Column(name = "Puntuacion")
 	private int score;
+
+	@Column(name = "Telefono")
 	private int movil;
-	
-	public Restaurant(int id_Restaurant, Preference pref, int tier, String type, String name, String gps, int score,
-			int movil) {
-		super();
-		this.id_Restaurant = id_Restaurant;
-		this.pref = pref;
-		this.tier = tier;
-		this.type = type;
-		this.name = name;
-		this.gps = gps;
-		this.score = score;
-		this.movil = movil;
-	}
-	
-	public int getId_Restaurant() {
-		return id_Restaurant;
-	}
-	public Preference getPref() {
-		return pref;
-	}
-	public int getTier() {
-		return tier;
-	}
-	public String getType() {
-		return type;
-	}
-	public String getName() {
-		return name;
-	}
-	public String getGps() {
-		return gps;
-	}
-	public int getScore() {
-		return score;
-	}
-	public int getMovil() {
-		return movil;
-	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(gps, id_Restaurant, movil, name, pref, score, tier, type);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Restaurant other = (Restaurant) obj;
-		return Objects.equals(gps, other.gps) && id_Restaurant == other.id_Restaurant && movil == other.movil
-				&& Objects.equals(name, other.name) && Objects.equals(pref, other.pref) && score == other.score
-				&& tier == other.tier && Objects.equals(type, other.type);
-	}
-	
 }
