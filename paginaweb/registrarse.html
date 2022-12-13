@@ -7,7 +7,7 @@
     <title>ÑamFood - SignUp</title>
     <link rel="stylesheet" href="style_Sign_up.css">
     <link rel="icon" href="namfood x32.png">
-    <script src="prueba.js"></script>
+
 
 </head>
 <body>
@@ -22,7 +22,7 @@
           <div class="form-inner">
             
             <!-- Start Signup Form -->
-            <form class="singup" method="post">
+            <form class="form">
                 <div class="field">
                     <input type="text" id="nombre" name="nombre" required pattern=".{2,45}" maxlength="45" placeholder="Username"/>
                   </div>
@@ -38,14 +38,15 @@
               <div class="signup-link">
                 Already have an account? <a href="iniciar_sesion.html">Login now</a>
               </div>
+              
             </form>
     
             
           </div>
-        </div>
+       
       </div>
     
-
+      <script src="conexion_API.js"></script>
 </body>
 </html>
 <!-- pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,50}$/" -->
