@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/style_Log_in.css">
+  <link rel="icon" href="imagenes/namfood x32.png">
+ 
+
+  <title>ÑamFood - LogIn</title>
+
+</head>
+
+<body>
+   
+  <div class="wrapper">
+
+    
+    <div class="title-text">    
+        <div class="title-login">Log In</div>
+    </div>
+
+  
+ 
+
+      <div class="form-inner">
+        
+        <!-- Start Login Form -->
+        <form class="form">
+          <div class="field">
+            <input type="email" id="correo" name="correo" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+{10,35}"  maxlength="35"  placeholder="Email"/>
+          </div>
+          <div class="field">
+            <input type="password" id="contraseña" name="contraseña" required  minlength="8" maxlength="50" placeholder="Password"/>
+          </div>        
+          <div class="field">
+            <input type="submit" value="Login">
+          </div>
+          <div class="signup-link">
+            Not a member yet? <a href="SingUp.html">Signup now</a>
+          </div>
+        </form>        
+      </div>
+  </div>
+
+  <script src="JS/conexion_API.js"></script>
+</body>
+</html>
+
+<!-- pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,50}$/"-->
