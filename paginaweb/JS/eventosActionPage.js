@@ -18,9 +18,9 @@ function rand(n){
         'imagenes/watermelon.png'
       ];
     function cambiar(){
-        restaurante.setAttribute('hidden', true)
-        document.getElementById("imagenuser").src = imagenes[rand(10)-1];
-        
+
+      restaurante.classList.add('div_hide')
+      document.getElementById("imagenuser").src = imagenes[rand(10)-1]
         
     }
 
@@ -28,10 +28,10 @@ function rand(n){
     const element = document.querySelector('.imagenLogo');
     element.addEventListener("click", evento);
 
-    function evento() {
+    function evento(){ 
       conexion();
-      restaurante.setAttribute('hidden', false)
-      element.remove();
+      restaurante.classList.remove('div_hide')
+      element.remove()
     }
 
     
@@ -43,12 +43,23 @@ function conexion(){
   })
   .then(data => {
       data.forEach(user => {
-          const name = `${user.name}`; //cambiar name por la variable de la API del nombre del usuario
-          
-          document.querySelector('.user').insertAdjacentHTML('beforeend', name);
+          const name = `${user.Nombre}`; //cambiar name por la variable de la API del nombre del usuario
 
-      });
+          document.querySelector('.user').insertAdjacentHTML('beforeend', name);
+      })
   })
+
+  /*.then(data =>{
+      data.forEach(restaurante => {
+      const restaurante = `<img src="${restaurante.imagen}"/> <li>Nombre: ${restaurante.Nombre}</li> 
+            <li>Localizacion: ${restaurante.Localizacion}</li><li>Tipo Comida: ${restaurante.Tipo_comida}</li> 
+            <li>Telefono: ${restaurante.Telefono}</li><li>Telefono: ${restaurante.Telefono}</li> 
+            <li>Puntuacion: ${restaurante.Puntuacion }</li>`;
+
+            document.querySelector('.restaurante').insertAdjacentHTML('beforeend', restaurante); 
+    })
+  })*/
+
   .catch(error => console.log(error));
   
    
