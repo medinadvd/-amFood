@@ -15,7 +15,9 @@ formEl.addEventListener('submit', event => {
         .then(data => console.log(data))
         .catch(error => console.log(error));       
 
-        const redirigir = window.location="LogIn.html";
+        const redirigir = window.location="ActionPage.html";
         setTimeout ("redirigir", 5000);
 });
+
+
 

@@ -1,4 +1,32 @@
-const restaurante = document.querySelector('.restaurante');
+function conexionAPI(){
+  fetch('https://jsonplaceholder.typicode.com/users')
+
+  .then(res => {
+     return res.json();
+  })
+  .then(data => {
+      data.forEach(user => {
+          const name = `${user.Nombre}`; //cambiar name por la variable de la API del nombre del usuario
+
+          document.querySelector('.user').insertAdjacentHTML('beforeend', name);
+      })
+  })
+  /*.then(res => {
+      return res.json();
+    })
+    .then(data =>{
+        data.forEach(restaurante => {
+        const restaurante = `<img src="${restaurante.imagen}"/> <li>Nombre: ${restaurante.Nombre}</li> 
+              <li>Localizacion: ${restaurante.Localizacion}</li><li>Tipo Comida: ${restaurante.Tipo_comida}</li> 
+              <li>Telefono: ${restaurante.Telefono}</li><li>Telefono: ${restaurante.Telefono}</li> 
+              <li>Puntuacion: ${restaurante.Puntuacion }</li>`;
+
+              document.querySelector('.restaurante').insertAdjacentHTML('beforeend', restaurante); 
+      })
+    })*/
+
+    .catch(error => console.log(error));
+}
 
 function rand(n){
     // creamos un numero al azar entre 1 y 10 (o cual sea la cantidad de imágenes)
@@ -17,57 +45,20 @@ function rand(n){
         'imagenes/strawberry.png',
         'imagenes/watermelon.png'
       ];
-    function cambiar(){
 
-      restaurante.classList.add('div_hide')
-      document.getElementById("imagenuser").src = imagenes[rand(10)-1]
-        
-    }
-
-    
+    var restaurante = document.getElementById("restaurante");
     const element = document.querySelector('.imagenLogo');
-    element.addEventListener("click", evento);
 
-    function evento(){ 
-      conexion();
-      restaurante.classList.remove('div_hide')
-      element.remove()
+    function cambiar(){
+      conexionAPI()
+      restaurante.style.display = "none"
+      document.getElementById("imagenuser").src = imagenes[rand(10)-1]
+           
+    }
+
+    function evento(){
+      restaurante.style.display= "block"
+      element.remove()    
     }
 
     
-function conexion(){
-  fetch('https://jsonplaceholder.typicode.com/users')
-
-  .then(res => {
-     return res.json();
-  })
-  .then(data => {
-      data.forEach(user => {
-          const name = `${user.Nombre}`; //cambiar name por la variable de la API del nombre del usuario
-
-          document.querySelector('.user').insertAdjacentHTML('beforeend', name);
-      })
-  })
-
-  /*.then(data =>{
-      data.forEach(restaurante => {
-      const restaurante = `<img src="${restaurante.imagen}"/> <li>Nombre: ${restaurante.Nombre}</li> 
-            <li>Localizacion: ${restaurante.Localizacion}</li><li>Tipo Comida: ${restaurante.Tipo_comida}</li> 
-            <li>Telefono: ${restaurante.Telefono}</li><li>Telefono: ${restaurante.Telefono}</li> 
-            <li>Puntuacion: ${restaurante.Puntuacion }</li>`;
-
-            document.querySelector('.restaurante').insertAdjacentHTML('beforeend', restaurante); 
-    })
-  })*/
-
-  .catch(error => console.log(error));
-  
-   
-  
-}
-
-
-
- 
-
-
