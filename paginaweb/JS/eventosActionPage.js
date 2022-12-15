@@ -18,8 +18,7 @@ function conexionAPI(){
         data.forEach(restaurante => {
         const restaurante = `<img src="${restaurante.imagen}"/> <li>Nombre: ${restaurante.Nombre}</li> 
               <li>Localizacion: ${restaurante.Localizacion}</li><li>Tipo Comida: ${restaurante.Tipo_comida}</li> 
-              <li>Telefono: ${restaurante.Telefono}</li><li>Telefono: ${restaurante.Telefono}</li> 
-              <li>Puntuacion: ${restaurante.Puntuacion }</li>`;
+              <li>Telefono: ${restaurante.Telefono}</li><li>Puntuacion: ${restaurante.Puntuacion }</li>`;
 
               document.querySelector('.restaurante').insertAdjacentHTML('beforeend', restaurante); 
       })
