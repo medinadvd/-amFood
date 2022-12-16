@@ -3,63 +3,52 @@
     src: url(../tipografia/TangoSans.ttf);
 }
 
+
+  
+body{
+    background-image: url(../imagenes/fondo_marron.png);
+    position: absolute;
+    width:100vw;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
 .banner
 {
-background-color:black;
-height: 15%;
-width: 100%;
-position:absolute;
-top:0px;
-left: 0px;
-
-
+    top: 0;
+    left: 0;
+    background-color:black;
+    height: auto;
+    position: fixed;
+    width:100vw;
 }
+
 .titulo
 {
-color:#ffffff;
-text-align:left;
-vertical-align:text-top;
-font-size: 50px;
-font-family: letraNF;
-margin-top: 1.5%;
-margin-left: 6%;
-position:absolute;
-}
- 
-body{
-    width: 100%;
-    height: 100%;
-    background-image: url(../imagenes/fondo_marron.png);
-}
-
-.restaurante{
-width:auto;
-margin-top: 25%;
-margin-left: 10%;
-position:absolute;
-    
-}
-.imagenLogo{
-    width:auto;
-    margin-top: 20%;
-    margin-left: 42%;
+    color:#ffffff;
+    text-align:left;
+    vertical-align:text-top;
+    font-size: 50px;
+    font-family: letraNF;
+    margin-top: 2.5%;
+    margin-left: 6%;
     position:absolute;
-        
 }
-
 .user
 {
-display: flex;
-justify-content: flex-end;
-padding: 2%;
-margin-right: 3%;
-gap: 1.2%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 2%;
+    margin-right: 3%;
+    gap: 1.2%;
 }
 
 .imagen_user
 {
-height:53.35820770263672px;
-margin-top: 0%;
+    height:53.35820770263672px;
+    margin-top: 0%;
 
 }
 
@@ -79,5 +68,93 @@ margin-top: 0%;
     font-family: letraNF;
     margin-top: 1%;
 }
+ 
+
+
+
+
+
+
+.formulario{
+    margin-left: 36%;
+    margin-top: 2%;
+    margin-right: 100%;
+    display: flex;
+    place-items: center;
+    background: #fff;
+    padding: 2%;
+    border-radius: 20px;
+    box-shadow: 10px 15px 20px black;
+    position: absolute;
+    font-family: letraNF;
+    width: 20vw;
+    gap: 3%;
+}
+
+.formulario .form{
+    margin-right: -10%;
+    width: 20vw;
+   
+}
+
+.formulario .opciones{
+    font-family: letraNF;
+    outline: 0;
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 9px;
+    width: 50%;
+    font-size:large
+    
+   
+}
+
+.btn-hover.color-1 {
+	background-color: black;
+	box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+.btn-hover {
+    width: 45%;
+	font-size: 18px;
+	font-weight: 600;
+	font-family: lora;
+	color: #fff;
+	cursor: pointer;
+	height: 35px;
+	text-align: center;
+	border: none;
+	background-size: 300% 100%;
+    border-radius: 50px;   
+}
+
+.texto{
+    width: 100%;
+    height: 100%;
+   
+}
+
+.imagenLogo{
+    
+    margin-top: 11%;
+    margin-left: 43%;
+    margin-right: 50%;
+    position:absolute;
+    width: 10vw;
+    
+        
+}
+
+.restaurante{
+    
+    margin-top: 25%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80vw;
+    position:absolute;
+    
+}
+
+
+
 
 

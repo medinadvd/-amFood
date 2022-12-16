@@ -34,18 +34,6 @@ body {
   width: 200%;
 }
 
-.wrapper .title-text .title-login {
-  width: 50%;
-  font-size: 35px;
-  font-weight: 600;
-  text-align: center;
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .form-container {
-  width: 100%;
-  overflow: hidden;
-}
 
 .form-container .form-inner {
   display: flex;

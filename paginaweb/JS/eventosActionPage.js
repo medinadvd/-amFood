@@ -4,13 +4,16 @@ function conexionAPI(){
   .then(res => {
      return res.json();
   })
-  /*.then(data => {
+  .then(data => {
       data.forEach(user => {
           const nombre = `${user.nombre}`;
 
-          document.querySelector('.infouser').insertAdjacentHTML('beforeend', nombre);
+          //document.querySelector('.infouser').insertAdjacentHTML('beforeend', nombre);
+          document.querySelector('.nombreuser').setAttribute("value", nombre);
+          
+        
       })
-  })*/
+  })
     .catch(error => console.log(error));
 }
 
@@ -45,11 +48,28 @@ function rand(n){
     function evento(){
       restaurante.style.display= "block"
       element.remove()
-      llamarRestaurante()    
+      
     }
 
-  function llamarRestaurante(){
+    formEl.addEventListener(evento, event => {
+      event.preventDefault();
 
+      const formData = new FormData(formEl);
+      const data = new URLSearchParams(formData);
+
+      fetch('https://reqres.in/api/users', {
+              method: 'POST',
+              body: data
+
+      })
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error));       
+
+  });
+
+
+  function llamarRestaurante(){
       /*fetch('https://jsonplaceholder.typicode.com/users')
 
   .then(res => {
