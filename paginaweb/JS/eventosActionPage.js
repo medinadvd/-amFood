@@ -41,6 +41,7 @@ function rand(n){
     function cambiar(){
       conexionAPI()
       restaurante.style.display = "none"
+      element.style.display = "none"
       document.getElementById("imagenuser").src = imagenes[rand(10)-1]
            
     }
@@ -48,12 +49,16 @@ function rand(n){
     function evento(){
       restaurante.style.display= "block"
       element.remove()
-      
+      llamarRestaurante();
     }
 
-    formEl.addEventListener(evento, event => {
-      event.preventDefault();
 
+    const formEl = document.querySelector('.form');
+
+    formEl.addEventListener('submit', event => {
+      element.style.display = "block"
+      event.preventDefault();
+    
       const formData = new FormData(formEl);
       const data = new URLSearchParams(formData);
 
@@ -64,8 +69,8 @@ function rand(n){
       })
       .then(res => res.json())
       .then(data => console.log(data))
-      .catch(error => console.log(error));       
-
+      .catch(error => console.log(error));    
+      
   });
 
 
@@ -88,3 +93,4 @@ function rand(n){
         })
       })*/
     }
+

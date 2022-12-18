@@ -145,12 +145,13 @@ body{
 }
 
 .restaurante{
-    
+    color: white;
     margin-top: 25%;
     margin-left: 10%;
     margin-right: 10%;
     width: 80vw;
     position:absolute;
+    font-size: 20px;
     
 }
 
