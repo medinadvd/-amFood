@@ -1,21 +1,4 @@
-function conexionAPI(){
-  fetch('https://jsonplaceholder.typicode.com/users')
 
-  .then(res => {
-     return res.json();
-  })
-  .then(data => {
-      data.forEach(user => {
-          const nombre = `${user.nombre}`;
-
-          //document.querySelector('.infouser').insertAdjacentHTML('beforeend', nombre);
-          document.querySelector('.nombreuser').setAttribute("value", nombre);
-          
-        
-      })
-  })
-    .catch(error => console.log(error));
-}
 
 function rand(n){
     // creamos un numero al azar entre 1 y 10 (o cual sea la cantidad de imágenes)
@@ -39,7 +22,25 @@ function rand(n){
     const element = document.querySelector('.imagenLogo');
 
     function cambiar(){
-      conexionAPI()
+     
+      fetch('https://jsonplaceholder.typicode.com/users')
+
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+          data.forEach(user => {
+              const nombre = `${user.nombre}`;
+
+              //document.querySelector('.infouser').insertAdjacentHTML('beforeend', nombre);
+              document.querySelector('.nombreuser').setAttribute("value", nombre);
+              
+            
+          })
+      })
+      .catch(error => console.log(error));
+
+      
       restaurante.style.display = "none"
       element.style.display = "none"
       document.getElementById("imagenuser").src = imagenes[rand(10)-1]
