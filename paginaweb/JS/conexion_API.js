@@ -1,4 +1,6 @@
 const formEl = document.querySelector('.form');
+const operacion = require("./cookies")
+const redirigir = window.location="ActionPage.html"
 
 formEl.addEventListener('submit', event => {
         event.preventDefault();
@@ -13,9 +15,12 @@ formEl.addEventListener('submit', event => {
         })
         .then(res => res.json())
         .then(data => console.log(data))
+        .then(operacion.setCookie(document.getElementById('.correo')))
+        .then(window.alert(data),
+        setTimeout (redirigir, 5000)
+        )
         .catch(error => console.log(error));       
 
-        const redirigir = window.location="LogIn.html";
-        setTimeout ("redirigir", 5000);
+        
 });
 

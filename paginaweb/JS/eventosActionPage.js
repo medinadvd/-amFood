@@ -34,7 +34,7 @@ function rand(n){
             const nombre = `${user.nombre}`;
             const correo = `${user.correo}`;
 
-            //document.querySelector('.infouser').insertAdjacentHTML('beforeend', nombre);
+            document.querySelector('.infouser').insertAdjacentHTML('beforeend', nombre);
             document.querySelector('.nombreuser').setAttribute("value", correo);
             
           

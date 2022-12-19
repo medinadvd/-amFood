@@ -49,7 +49,7 @@ function rand(n){
         data.forEach(user => {
           const nombre = `${user.nombre}`;
 
-          //document.querySelector('.nombreuser').insertAdjacentHTML('beforeend', nombre);
+          document.querySelector('.nombreuser').insertAdjacentHTML('beforeend', nombre);
           
           const inforuser = `<ul><li>Usuario:${user.nombre}</li><p></p><li>Correo:<br>${user.correo}</li> 
           <p></p> <li>Password:<br>${user.password}</li></ul>`;
