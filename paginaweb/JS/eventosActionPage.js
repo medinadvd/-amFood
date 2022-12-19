@@ -21,7 +21,9 @@ function rand(n){
   const element = document.querySelector('.imagenLogo');
 
   function cambiar(){
-   
+   /* const operacion = require("./cookies")
+    operacion.getCookie();*/
+
     fetch('https://jsonplaceholder.typicode.com/users')
 
     .then(res => {
@@ -30,9 +32,10 @@ function rand(n){
     .then(data => {
         data.forEach(user => {
             const nombre = `${user.nombre}`;
-            
+            const correo = `${user.correo}`;
+
             //document.querySelector('.infouser').insertAdjacentHTML('beforeend', nombre);
-            document.querySelector('.nombreuser').setAttribute("value", nombre);
+            document.querySelector('.nombreuser').setAttribute("value", correo);
             
           
         })
@@ -40,6 +43,8 @@ function rand(n){
     .catch(error => console.log(error));
 
     
+
+
     restaurante.style.display = "none"
     element.style.display = "none"
     document.getElementById("imagenuser").src = imagenes[rand(10)-1]
