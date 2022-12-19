@@ -6,7 +6,7 @@ formEl.addEventListener('submit', event => {
         const formData = new FormData(formEl);
         const data = new URLSearchParams(formData);
 
-        fetch('https://reqres.in/api/users', {
+        fetch('http://localhost:8090/user/singUp', {
                 method: 'POST',
                 body: data
 

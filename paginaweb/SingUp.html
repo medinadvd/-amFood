@@ -23,14 +23,18 @@
             
             <!-- Start Signup Form -->
             <form class="form">
+              <div class="field">
+                <input type="email" id="correo" name="correo" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+{10,35}"  maxlength="35"  placeholder="Email"/>
+              </div>  
                 <div class="field">
                     <input type="text" id="nombre" name="nombre" required pattern=".{2,45}" maxlength="45" placeholder="Username"/>
                   </div>
+              
+                <!-- Minimo 8 caracteres, Maximo 50, Al menos una letra mayúscula, 
+                  Al menos una letra minuscula, Al menos un dígito, No espacios en blanco,
+                  Al menos 1 caracter especial -->
               <div class="field">
-                <input type="email" id="correo" name="correo" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+{10,35}"  maxlength="35"  placeholder="Email"/>
-              </div>
-              <div class="field">
-                <input type="password" id="password" name="password" required  minlength="8" maxlength="50" placeholder="Password"/>
+                <input type="password" id="password" name="password" required  pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,50}$/"minlength="8" maxlength="50" placeholder="Password"/>
               </div>        
               <div class="field">
                 <input type="submit" value="SignUp">
@@ -49,4 +53,3 @@
       <script src="JS/conexion_API.js"></script>
 </body>
 </html>
-<!-- pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,50}$/" -->

@@ -3,7 +3,10 @@
     src: url(../tipografia/TangoSans.ttf);
 }
 
-
+a{
+    color: white;
+    text-decoration: none;
+}
   
 body{
     background-image: url(../imagenes/fondo_marron.png);
@@ -52,8 +55,9 @@ body{
 }
 
 .formulario{
-    margin-left: 25%;
+    margin-left: 20vw;
     margin-top: 2%;
+    margin-right: 20vw;
     place-items: center;
     background: rgba(255, 255, 255, 0.7) ;
     padding: 2%;
@@ -63,7 +67,6 @@ body{
     font-family: letraNF;
     width: max-content;
     height: max-content;
-    
 }
 
 
@@ -154,7 +157,7 @@ body{
 }
 
 .btn-hover.color-1 {
-	background-image: linear-gradient(to right, red,red,black,black);
+	background-image: linear-gradient(to right, black,#835213,#cc7b12,#ffb350);
 	box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
    
 }

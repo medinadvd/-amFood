@@ -11,12 +11,12 @@ formEl.addEventListener('submit', event => {
                 body: data
 
         })
-        .then(res => res.json())
+        .then(res => res.json())        
         .then(data => console.log(data))
         .catch(error => console.log(error));       
 
-        const redirigir = window.location="ActionPage.html";
-        setTimeout ("redirigir", 5000);
+        /**const redirigir = window.location="ActionPage.html";
+        setTimeout ("redirigir", 5000);*/
 });
 
 
