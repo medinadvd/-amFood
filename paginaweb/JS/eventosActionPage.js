@@ -30,7 +30,7 @@ function rand(n){
     .then(data => {
         data.forEach(user => {
             const nombre = `${user.nombre}`;
-
+            
             //document.querySelector('.infouser').insertAdjacentHTML('beforeend', nombre);
             document.querySelector('.nombreuser').setAttribute("value", nombre);
             
@@ -84,7 +84,7 @@ function llamarRestaurante(){
     })
     .then(data =>{
         data.forEach(restaurante => {
-        const restaurante = `<img src="${restaurante.imagen}"/> <li>Nombre: ${restaurante.nombre}</li> 
+        const restaurante = `<img src="/imagenes/${restaurante.imagen}"/> <li>Nombre: ${restaurante.nombre}</li> 
               <li>Localizacion: ${restaurante.localizacion}</li><li>Tipo Comida: ${restaurante.tipo_comida}</li> 
               <li>Telefono: ${restaurante.telefono}</li><li>Puntuacion: ${restaurante.puntuacion }</li>`;
 
