@@ -6,12 +6,12 @@
 *{
     font-family: letraNF;
 }
-  
+
 body{
     background-image: url(../imagenes/fondo_marron.png);
     position: absolute;
-    width:100vw;
-    height: 100%;
+    width:max-content;
+    height: max-content;
     padding: 0;
     margin: 0;
     display: block;
@@ -159,14 +159,38 @@ body{
 }
 
 .restaurante{
-    color: white;
+    color: black;
     margin-top: 15%;
     margin-left: 10%;
-    margin-right: 10%;
-    width: 80vw;
+    margin-bottom: auto;
+    width: 70vw;
     position:absolute;
-    font-size: 20px;
-    
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-end;
+
+
+}
+.inforestaurante{
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.2%;
+
+}
+.imagenrestaurante{
+    height: 25vw;
+}
+
+
+.restaurante ul{
+    margin-top: 5%;
+    list-style: none;
+    padding-left: 2vw;
+    width: max-content;
+ 
+}
+.restaurante li{
+    margin-top: 20%;
 }
 
 

@@ -24,11 +24,13 @@ function rand(n){
 
   function myFunction() {
     var x = document.getElementById("restaurante");
-
+    var y = document.getElementById("boton");
     if (x.style.display === "none") {
         x.style.display = "block";
+        y.style.display = "none";
     } else {
         x.style.display = "none";
+        
     }
 }
 
@@ -79,7 +81,7 @@ function rand(n){
     fetch("http://localhost:8090/restaurant", requestOptions)
     .then(res => res.json()) 
     .then(result =>{
-    const info = `<img src="/imagenes/${result.imagen}"/> <li>Nombre: ${result.nombre}</li> 
+    const info = `<img src="/imagenes/${result.imagen}" class="imagenrestaurante"/> <li>Nombre: ${result.nombre}</li> 
     <li>Localizacion: ${result.localizacion}</li><li>Tipo Comida: ${result.tipo_comida}</li> 
     <li>Telefono: ${result.telefono}</li><li>Puntuacion: ${result.puntuacion }</li>`;
 
