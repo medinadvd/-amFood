@@ -39,17 +39,12 @@ public class RestaurantController {
 		List<Restaurant> restList;
 		Random randomNumTier = new Random();
 	    randomTier = randomNumTier.nextInt(9);
-	    System.out.println("-----------------------------------------------------------");
 		if(randomTier<5) {			
 			restList =  restService.selectWhereRestaurantTier(profile, 1, gps);
-			System.out.println("LLEGOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-			System.out.println(restList);
 		}else if(randomTier>4 && randomTier<8){
 			restList = restService.selectWhereRestaurantTier(profile, 2, gps);
-			System.out.println(restList);
 		}else {
 			restList = restService.selectWhereRestaurantTier(profile, 3, gps);
-			System.out.println(restList);
 		}
 		Random randomNum = new Random();
 	    indiceRest = randomNum.nextInt(restList.size());
