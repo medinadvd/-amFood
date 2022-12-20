@@ -5,7 +5,6 @@ const formEl = document.querySelector('.form');
 formEl.addEventListener('submit', event => {
 
         event.preventDefault();
-alert(1);
         var myHeaders = new Headers();
         myHeaders.append("con", "application/json");
         myHeaders.append("Content-Type", "application/json");

@@ -21,6 +21,7 @@ function rand(n){
       'imagenes/watermelon.png'
     ];
     document.getElementById("imagenuser").src = imagenes[rand(10)-1]
+    cambiar();
 
   function myFunction() {
     var x = document.getElementById("restaurante");
@@ -81,11 +82,11 @@ function rand(n){
     fetch("http://localhost:8090/restaurant", requestOptions)
     .then(res => res.json()) 
     .then(result =>{
-    const info = `<img src="/imagenes/${result.imagen}" class="imagenrestaurante"/> <li>Nombre: ${result.nombre}</li> 
+    const info = `<img src="/imagenes/${result.imagen}" class="imagenrestaurante"/> <ul> <li>Nombre: ${result.nombre}</li> 
     <li>Localizacion: ${result.localizacion}</li><li>Tipo Comida: ${result.tipo_comida}</li> 
-    <li>Telefono: ${result.telefono}</li><li>Puntuacion: ${result.puntuacion }</li>`;
+    <li>Telefono: ${result.telefono}</li><li>Puntuacion: ${result.puntuacion }</li></ul>`;
 
-    document.getElementById("restaurante").innerHTML = info;
+    document.getElementById("inforestaurante").innerHTML = info;
 
     console.log(result);
     }) 
